@@ -8,7 +8,11 @@
   </button>
 </template>
 <script>
+import Icon from './icon'
   export default {
+    components: {
+      'r-icon': Icon
+    },
     // props: ['icon', 'iconPosition']
     props: {
       icon: {},
