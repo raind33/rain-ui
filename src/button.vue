@@ -8,7 +8,7 @@
   </button>
 </template>
 <script>
-import Icon from './icon'
+import Icon from './icon.vue'
   export default {
     components: {
       'r-icon': Icon
