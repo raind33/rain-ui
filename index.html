@@ -18,10 +18,13 @@
       --border-color-hover: #666;
     }
     #app {
-      margin: 20px;
+      /* margin: 20px; */
     }
     body {
       font-size: var(--font-size);
+    }
+    .a{
+      height: 100px;
     }
   </style
   <style>
@@ -29,24 +32,10 @@
 </head>
 <body>
 <div id="app">
-  <r-button>
-    按钮
-  </r-button>
-  <r-button icon="settings">
-    按钮
-  </r-button>
-  <r-button loading icon="settings" icon-position="right">
-    按钮
-  </r-button>
-  <r-button-group>
-    <r-button icon="left">
-    上一页
-  </r-button>
-    <r-button icon="right" icon-position="right">
-    下一页
-  </r-button>
-  </r-button-group>
-  <r-input v-model="message"></r-input>
+  <r-row >
+    <r-col span="10" offset="2"><div class="a" style="background: red;">232</div></r-col>
+    <r-col span="12" ><div class="a" style="background: blue;">232</div></r-col>
+  </r-row>
 </div>
 <script src="./src/app.js"></script>
 </body>
