@@ -7,6 +7,7 @@
   <title>rain-ui</title>
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
+    img {max-width: 100%;}
     html {
       --button-height: 32px;
       --font-size: 14px;
@@ -18,24 +19,24 @@
       --border-color-hover: #666;
     }
     #app {
-      /* margin: 20px; */
     }
     body {
       font-size: var(--font-size);
     }
-    .a{
-      height: 100px;
-    }
-  </style
-  <style>
   </style>
 </head>
 <body>
+<style>
+  .demo {
+    border: 1px solid #666;
+    min-height: 100px;
+  }
+</style>
+
 <div id="app">
-  /* <r-row >
-    <r-col span="10" offset="2"><div class="a" style="background: red;">232</div></r-col>
-    <r-col span="12" ><div class="a" style="background: blue;">232</div></r-col>
-  </r-row> */
+  <button @click="showToast1">top</button>
+  <button @click="showToast2">middle</button>
+  <button @click="showToast3">bottom</button>
 </div>
 <script src="./src/app.js"></script>
 </body>
