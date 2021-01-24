@@ -12,6 +12,11 @@ import Content from './content'
 import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-header'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 
 Vue.component('r-button', Button)
 Vue.component('r-icon', Icon)
@@ -25,11 +30,17 @@ Vue.component('r-content', Content)
 Vue.component('r-footer', Footer)
 Vue.component('r-sider', Slider)
 Vue.component('r-toast', Toast)
+Vue.component('r-tabs', Tabs)
+Vue.component('r-tabs-head', TabsHead)
+Vue.component('r-tabs-body', TabsBody)
+Vue.component('r-tabs-item', TabsItem)
+Vue.component('r-tabs-pane', TabsPane)
 Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
-    message: 232
+    message: 232,
+    selectedTab: 'woman'
   },
   methods: {
     showToast1(){
