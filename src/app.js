@@ -18,7 +18,8 @@ import TabsBody from './tabs-body'
 import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
 import Popover from './popover.vue'
-
+import CollapseItem from './collapse-item.vue'
+import Collapse from './collapse.vue'
 Vue.component('r-button', Button)
 Vue.component('r-icon', Icon)
 Vue.component('r-input', Input)
@@ -37,12 +38,16 @@ Vue.component('r-tabs-body', TabsBody)
 Vue.component('r-tabs-item', TabsItem)
 Vue.component('r-tabs-pane', TabsPane)
 Vue.component('r-popover', Popover)
+Vue.component('r-collapse', Collapse)
+Vue.component('r-collapse-item', CollapseItem)
+
 Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
     message: 232,
-    selectedTab: 'woman'
+    selectedTab: ['2', '1'],
+
   },
   methods: {
     showToast1(){
