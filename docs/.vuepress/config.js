@@ -1,8 +1,9 @@
 module.exports = {
+  base: '/rain-ui/',
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '文档', link: '/guide/' },
+      { text: '文档', link: '/get-started/' },
       { text: '交流', link: 'https://google.com' },
     ],
     sidebar: [

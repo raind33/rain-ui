@@ -5,7 +5,7 @@ title: Button
 
 使用方法
 
-<!-- <ClientOnly> -->
+<ClientOnly>
   <button-demo></button-demo>
-<!-- </ClientOnly> -->
+</ClientOnly>
 
