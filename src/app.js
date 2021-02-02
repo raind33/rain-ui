@@ -20,6 +20,9 @@ import TabsPane from './tabs-pane'
 import Popover from './popover.vue'
 import CollapseItem from './collapse-item.vue'
 import Collapse from './collapse.vue'
+import Cascader from './cascader.vue'
+import CascaderItem from './cascader-items.vue'
+
 Vue.component('r-button', Button)
 Vue.component('r-icon', Icon)
 Vue.component('r-input', Input)
@@ -40,6 +43,8 @@ Vue.component('r-tabs-pane', TabsPane)
 Vue.component('r-popover', Popover)
 Vue.component('r-collapse', Collapse)
 Vue.component('r-collapse-item', CollapseItem)
+Vue.component('r-cascader', Cascader)
+Vue.component('r-cascader-item', CascaderItem)
 
 Vue.use(plugin)
 new Vue({
@@ -47,30 +52,48 @@ new Vue({
   data: {
     message: 232,
     selectedTab: ['2', '1'],
-
-  },
-  methods: {
-    showToast1(){
-      this.showToast('top')
-    },
-    showToast2(){
-      this.showToast('middle')
-    },
-    showToast3(){
-      this.showToast('bottom')
-    },
-    showToast(position){
-      this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
-        position,
-        enableHtml: false,
-        closeButton: {
-          text: '已充值',
-          callback () {
-            console.log('他说已经充值智商了')
-          }
+    source: [{
+      name: '浙江',
+      children: [
+        {
+          name: '杭州',
+          children: [
+            {name: '上城'},
+            {name: '下城'},
+            {name: '江干'},
+          ]
         },
-        autoCloseDelay: 3
-      })
-    }
+        {
+          name: '嘉兴',
+          children: [
+            {name: '南湖'},
+            {name: '秀洲'},
+            {name: '嘉善'},
+          ]
+        },
+      ]
+    }, {
+      name: '福建',
+      children: [
+        {
+          name: '福州',
+          children: [
+            {name: '鼓楼'},
+            {name: '台江'},
+            {name: '仓山'},
+          ]
+        },
+      ]
+    }, {
+      name: '安徽',
+      children: [{
+        name: '合肥',
+        children: [{
+          name: '瑶海'
+        }, {
+          name: '庐阳'
+        }]
+      }]
+    }]
   }
 })

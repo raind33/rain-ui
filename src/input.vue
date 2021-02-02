@@ -38,7 +38,6 @@
 </script>
 <style lang="scss" scoped>
  @import 'var';
-  $red: #F1453D;
   .wrapper { font-size: $font-size; display: inline-flex;
     align-items: center;
     > :not(:last-child) {margin-right: .5em; }
