@@ -4,23 +4,23 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'RLayout',
-    data () {
-      return {
-        layoutClass: {
-          hasSider: false
-        }
+export default {
+  name: 'RLayout',
+  data () {
+    return {
+      layoutClass: {
+        hasSider: false
       }
-    },
-    mounted () {
-      this.$children.forEach((vm) => {
-        if (vm.$options.name === 'RSider') {
-          this.layoutClass.hasSider = true
-        }
-      })
     }
+  },
+  mounted () {
+    this.$children.forEach((vm) => {
+      if (vm.$options.name === 'RSider') {
+        this.layoutClass.hasSider = true
+      }
+    })
   }
+}
 </script>
 
 <style lang="scss" scoped>

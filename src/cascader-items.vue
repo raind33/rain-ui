@@ -13,33 +13,33 @@
 </template>
 
 <script>
-  import Icon from './icon'
-  export default {
-    name: "RCascaderItems",
-    components: {Icon},
-    props: {
-      items: {
-        type: Array
-      },
-      height: {
-        type: String
-      }
+import Icon from './icon'
+export default {
+  name: 'RCascaderItems',
+  components: { Icon },
+  props: {
+    items: {
+      type: Array
     },
-    data () {
-      return {
-        leftSelected: null
-      }
-    },
-    computed: {
-      rightItems () {
-        if (this.leftSelected && this.leftSelected.children) {
-          return this.leftSelected.children
-        } else {
-          return null
-        }
+    height: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      leftSelected: null
+    }
+  },
+  computed: {
+    rightItems () {
+      if (this.leftSelected && this.leftSelected.children) {
+        return this.leftSelected.children
+      } else {
+        return null
       }
     }
   }
+}
 </script>
 
 <style scoped lang="scss">

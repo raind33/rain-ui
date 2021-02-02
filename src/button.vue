@@ -9,26 +9,26 @@
 </template>
 <script>
 import Icon from './icon.vue'
-  export default {
-    components: {
-      'r-icon': Icon
+export default {
+  components: {
+    'r-icon': Icon
+  },
+  // props: ['icon', 'iconPosition']
+  props: {
+    icon: {},
+    loading: {
+      type: Boolean,
+      default: false
     },
-    // props: ['icon', 'iconPosition']
-    props: {
-      icon: {},
-      loading: {
-        type: Boolean,
-        default: false
-      },
-      iconPosition: {
-        type: String,
-        default: 'left',
-        validator (value) {
-          return value === 'left' || value === 'right'
-        }
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator (value) {
+        return value === 'left' || value === 'right'
       }
     }
   }
+}
 </script>
 <style lang="scss" scoped>
 @import "var";

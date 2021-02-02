@@ -13,28 +13,28 @@
   </div>
 </template>
 <script>
-  import Icon from './icon'
+import Icon from './icon'
 
-  export default {
-    components: {Icon},
-    name: 'RInput',
-    props: {
-      value: {
-        type: String
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      readonly: {
-        type: Boolean,
-        default: false
-      },
-      error: {
-        type: String
-      }
+export default {
+  components: { Icon },
+  name: 'RInput',
+  props: {
+    value: {
+      type: String
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: String
     }
   }
+}
 </script>
 <style lang="scss" scoped>
  @import 'var';

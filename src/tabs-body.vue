@@ -4,12 +4,12 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'RTabsBody',
-    inject: ['eventBus'],
-    created(){
-    }
+export default {
+  name: 'RTabsBody',
+  inject: ['eventBus'],
+  created () {
   }
+}
 </script>
 <style>
   .tabs-body {

@@ -10,24 +10,24 @@
 </template>
 
 <script>
-  import CascaderItems from './cascader-items'
-  export default {
-    name: 'RCascader',
-    components: {CascaderItems},
-    props: {
-      source: {
-        type: Array
-      },
-      popoverHeight: {
-        type: String
-      }
+import CascaderItems from './cascader-items'
+export default {
+  name: 'RCascader',
+  components: { CascaderItems },
+  props: {
+    source: {
+      type: Array
     },
-    data () {
-      return {
-        popoverVisible: false,
-      }
-    },
+    popoverHeight: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      popoverVisible: false
+    }
   }
+}
 </script>
 
 <style scoped lang="scss">

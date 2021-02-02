@@ -11,115 +11,114 @@
 </template>
 
 <script>
-  export default {
-    name: "RPopover",
-    data () {
-      return {
-        visible: false,
-      }
-    },
-    mounted () {
+export default {
+  name: 'RPopover',
+  data () {
+    return {
+      visible: false
+    }
+  },
+  mounted () {
+    if (this.trigger === 'click') {
+      this.$refs.popover.addEventListener('click', this.onClick)
+    } else {
+      this.$refs.popover.addEventListener('mouseenter', this.open)
+      this.$refs.popover.addEventListener('mouseleave', this.close)
+    }
+  },
+  destroyed () {
+    if (this.trigger === 'click') {
+      this.$refs.popover.removeEventListener('click', this.onClick)
+    } else {
+      this.$refs.popover.removeEventListener('mouseenter', this.open)
+      this.$refs.popover.removeEventListener('mouseleave', this.close)
+    }
+  },
+  computed: {
+    openEvent () {
       if (this.trigger === 'click') {
-        this.$refs.popover.addEventListener('click', this.onClick)
+        return 'click'
       } else {
-        this.$refs.popover.addEventListener('mouseenter', this.open)
-        this.$refs.popover.addEventListener('mouseleave', this.close)
+        return 'mouseenter'
       }
     },
-    destroyed () {
+    closeEvent () {
       if (this.trigger === 'click') {
-        this.$refs.popover.removeEventListener('click', this.onClick)
+        return 'click'
       } else {
-        this.$refs.popover.removeEventListener('mouseenter', this.open)
-        this.$refs.popover.removeEventListener('mouseleave', this.close)
+        return 'mouseleave'
+      }
+    }
+  },
+  props: {
+    position: {
+      type: String,
+      default: 'top',
+      validator (value) {
+        return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
       }
     },
-    computed: {
-      openEvent () {
-        if (this.trigger === 'click') {
-          return 'click'
-        } else {
-          return 'mouseenter'
-        }
-      },
-      closeEvent () {
-        if (this.trigger === 'click') {
-          return 'click'
-        } else {
-          return 'mouseleave'
+    trigger: {
+      type: String,
+      default: 'click',
+      validator (value) {
+        return ['click', 'hover'].indexOf(value) >= 0
+      }
+    }
+  },
+  methods: {
+    positionContent () {
+      const { contentWrapper, triggerWrapper } = this.$refs
+      document.body.appendChild(contentWrapper)
+      const { width, height, top, left } = triggerWrapper.getBoundingClientRect()
+      const { height: height2 } = contentWrapper.getBoundingClientRect()
+      const positions = {
+        top: { top: top + window.scrollY, left: left + window.scrollX },
+        bottom: { top: top + height + window.scrollY, left: left + window.scrollX },
+        left: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.scrollX
+        },
+        right: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.scrollX + width
         }
       }
+      contentWrapper.style.left = positions[this.position].left + 'px'
+      contentWrapper.style.top = positions[this.position].top + 'px'
     },
-    props: {
-      position: {
-        type: String,
-        default: 'top',
-        validator (value) {
-          return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
-        }
-      },
-      trigger: {
-        type: String,
-        default: 'click',
-        validator (value) {
-          return ['click', 'hover'].indexOf(value) >= 0
-        }
-      }
-    },
-    methods: {
-      positionContent () {
-        const {contentWrapper, triggerWrapper} = this.$refs
-        document.body.appendChild(contentWrapper)
-        const {width, height, top, left} = triggerWrapper.getBoundingClientRect()
-        const {height: height2} = contentWrapper.getBoundingClientRect()
-        let positions = {
-          top: {top: top + window.scrollY, left: left + window.scrollX,},
-          bottom: {top: top + height + window.scrollY, left: left + window.scrollX},
-          left: {
-            top: top + window.scrollY + (height - height2) / 2,
-            left: left + window.scrollX
-          },
-          right: {
-            top: top + window.scrollY + (height - height2) / 2,
-            left: left + window.scrollX + width
-          },
-        }
-        contentWrapper.style.left = positions[this.position].left + 'px'
-        contentWrapper.style.top = positions[this.position].top + 'px'
-
-      },
-      onClickDocument (e) {
-        if (this.$refs.popover &&
+    onClickDocument (e) {
+      if (this.$refs.popover &&
           (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
-        ) { return }
-        if (this.$refs.contentWrapper &&
+      ) { return }
+      if (this.$refs.contentWrapper &&
           (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
-        ) { return }
-        this.close()
-      },
-      open () {
-        this.visible = true
-        this.$nextTick(() => {
-          this.positionContent()
-          document.addEventListener('click', this.onClickDocument)
-        })
-      },
-      close () {
-        this.visible = false
-        document.removeEventListener('click', this.onClickDocument)
-      },
-      onClick (event) {
-        if (this.$refs.triggerWrapper.contains(event.target)) {
-          if (this.visible === true) {
-            this.close()
-            console.log('click close')
-          } else {
-            this.open()
-          }
+      ) { return }
+      this.close()
+    },
+    open () {
+      this.visible = true
+      this.$nextTick(() => {
+        this.positionContent()
+        document.addEventListener('click', this.onClickDocument)
+      })
+    },
+    close () {
+      this.visible = false
+      document.removeEventListener('click', this.onClickDocument)
+    },
+    onClick (event) {
+      if (this.$refs.triggerWrapper.contains(event.target)) {
+        if (this.visible === true) {
+          this.close()
+          console.log('click close')
+        } else {
+          this.open()
         }
       }
     }
   }
+}
 </script>
 
 <style scoped lang="scss">

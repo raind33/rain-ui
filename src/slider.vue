@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'RSider'
-  }
+export default {
+  name: 'RSider'
+}
 </script>
