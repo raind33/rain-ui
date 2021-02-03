@@ -32,10 +32,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "var";
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
   .r-button { font-size: $font-size; height: $button-height; padding: 0 1em;
     border-radius: $border-radius; border: 1px solid $border-color;
     background: $button-bg;
