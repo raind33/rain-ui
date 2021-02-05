@@ -1,5 +1,9 @@
 <template>
   <div>
+    <r-popover>
+      <button>323</button>
+      <div slot="content">2323</div>
+    </r-popover>
     <p>{{selected &&selected[0] &&selected[0].name || '空'}}</p>
     <p>{{selected &&selected[1] &&selected[1].name || '空'}}</p>
     <p>{{selected &&selected[2] &&selected[2].name || '空'}}</p>
@@ -14,6 +18,7 @@
 </template>
 <script>
 import Cascader from './cascader'
+import Popover from './popover'
 import db from './db'
 
 function ajax (parentId = 0) {
@@ -35,7 +40,8 @@ function ajax (parentId = 0) {
 export default {
   name: 'demo',
   components: {
-    'r-cascader': Cascader
+    'r-cascader': Cascader,
+    'r-popover': Popover
   },
   data () {
     return {
