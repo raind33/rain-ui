@@ -1,80 +1,43 @@
 <template>
   <div>
-    <r-popover>
-      <button>323</button>
-      <div slot="content">2323</div>
-    </r-popover>
-    <p>{{selected &&selected[0] &&selected[0].name || '空'}}</p>
-    <p>{{selected &&selected[1] &&selected[1].name || '空'}}</p>
-    <p>{{selected &&selected[2] &&selected[2].name || '空'}}</p>
-    <div style="padding: 20px;">
-      <r-cascader :source.sync="source" popover-height="200px"
-        @update:source="onUpdateSource"
-        @update:selected="onUpdateSelected"
-        :selected.sync="selected" :load-data="loadData"></r-cascader>
-    </div>
-    {{source}}
+    <g-slides class="wrapper" width="300px" height="200px" :selected.sync="selected">
+      <g-slides-item name="1">
+        <div class="box">1</div>
+      </g-slides-item>
+      <g-slides-item name="2">
+        <div class="box">2</div>
+      </g-slides-item>
+      <g-slides-item name="3">
+        <div class="box">3</div>
+      </g-slides-item>
+    </g-slides>
   </div>
 </template>
 <script>
-import Cascader from './cascader'
-import Popover from './popover'
-import db from './db'
-
-function ajax (parentId = 0) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const result = db.filter((item) => item.parent_id === parentId)
-      result.forEach(node => {
-        if (db.filter(item => item.parent_id === node.id).length > 0) {
-          node.isLeaf = false
-        } else {
-          node.isLeaf = true
-        }
-      })
-      resolve(result)
-    }, 300)
-  })
-}
+import GSlides from './slides'
+import GSlidesItem from './slides-item'
 
 export default {
   name: 'demo',
-  components: {
-    'r-cascader': Cascader,
-    'r-popover': Popover
-  },
+  components: { GSlides, GSlidesItem },
   data () {
     return {
-      selected: [],
-      source: []
+      selected: '2'
     }
   },
   created () {
-    ajax(0).then(result => {
-      console.log(result)
-      this.source = result
-    })
-  },
-  methods: {
-    loadData ({ id }, updateSource) {
-      ajax(id).then(result => {
-        updateSource(result) // 回调:把别人传给我的函数调用一下
-      })
-    },
-    onUpdateSource () {
-    },
-    onUpdateSelected () {
-    }
   }
 }
 </script>
 <style>
   * {margin: 0; padding: 0; box-sizing: border-box;}
-  img {max-width: 100%;}
-  html {
-    --font-size: 14px;
+  .wrapper {
+    margin: 40px;
   }
-  body {
-    font-size: var(--font-size);
+  .box {
+    width: 100%;
+    height: 350px;
+    background: #ddd;
+    border: 1px solid red;
   }
 </style>
