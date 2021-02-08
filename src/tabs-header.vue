@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-head">
+  <div class="tabs-head" ref="head">
     <slot></slot>
     <div class="line" ref="line"></div>
     <div class="actions-wrapper">
@@ -13,10 +13,16 @@ export default {
   inject: ['eventBus'],
   mounted () {
     this.eventBus.$on('update:selected', (item, vm) => {
-      const { width, height, top, left } = vm.$el.getBoundingClientRect()
-      this.$refs.line.style.width = `${width}px`
-      this.$refs.line.style.left = `${left}px`
+      this.updateLinePosition(vm)
     })
+  },
+  methods: {
+    updateLinePosition (selectedVm) {
+      const { width, left } = selectedVm.$el.getBoundingClientRect()
+      const { left: left2 } = this.$refs.head.getBoundingClientRect()
+      this.$refs.line.style.width = `${width}px`
+      this.$refs.line.style.left = `${left - left2}px`
+    }
   }
 }
 </script>
