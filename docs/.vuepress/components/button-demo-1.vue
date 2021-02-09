@@ -29,7 +29,7 @@
           <r-button icon="settings">默认按钮</r-button>
           <r-button :loading="true">默认按钮</r-button>
           <r-button disabled>默认按钮</r-button>
-      `.replace(/ {8}/g, '').trim()
+      `.replace(/^ {8}/gm, '').trim()
       }
     }
   }

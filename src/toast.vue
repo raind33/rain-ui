@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
-    <div class="toast" ref="toast">
+  <div class="r-wrapper" :class="toastClasses">
+    <div class="r-toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
@@ -99,14 +99,14 @@ export default {
     0% {opacity: 0; }
     100% {opacity: 1;}
   }
-  .wrapper {
+  .r-wrapper {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     $animation-duration: 300ms;
     &.position-top {
       top: 0;
-      .toast {
+      .r-toast {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         animation: slide-down $animation-duration;
@@ -114,7 +114,7 @@ export default {
     }
     &.position-bottom {
       bottom: 0;
-      .toast {
+      .r-toast {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         animation: slide-up $animation-duration;
@@ -123,12 +123,12 @@ export default {
     &.position-middle {
       top: 50%;
       transform: translateX(-50%) translateY(-50%);
-      .toast {
+      .r-toast {
         animation: fade-in $animation-duration;
       }
     }
   }
-  .toast {
+  .r-toast {
     font-size: $font-size; min-height: $toast-min-height; line-height: 1.8;
     display: flex;
     color: white; align-items: center; background: $toast-bg; border-radius: 4px;

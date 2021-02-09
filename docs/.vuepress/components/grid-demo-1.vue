@@ -118,7 +118,6 @@
     components: {RRow, RCol},
     data () {
       return {
-        value: '1',
         content: `
           * {
             box-sizing: border-box;
@@ -210,7 +209,7 @@
               <div class="demoCol">2</div>
             </r-col>
           </r-row>
-      `.replace(/ {8}/g, '').trim()
+      `.replace(/^ {8}/gm, '').trim()
       }
     }
   }

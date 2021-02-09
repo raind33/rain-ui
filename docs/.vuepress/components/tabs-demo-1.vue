@@ -48,7 +48,7 @@
               <r-tabs-pane name="2">content 2</r-tabs-pane>
             </r-tabs-body>
           </r-tabs>
-      `.replace(/ {8}/g, '').trim()
+      `.replace(/^ {8}/gm, '').trim()
       }
     }
   }

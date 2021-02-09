@@ -4,7 +4,6 @@
     <p>
       <strong>预览</strong>
     </p>
-    <r-input></r-input>
     <r-input value="中文"></r-input>
     <r-input value="中文" disabled></r-input>
     <r-input value="中文" readonly></r-input>
@@ -28,7 +27,7 @@
           <r-input value="中文"></r-input>
           <r-input value="中文" disabled></r-input>
           <r-input value="中文" readonly></r-input>
-      `.replace(/ {8}/g, '').trim()
+      `.replace(/^ {8}/gm, '').trim()
       }
     }
   }
