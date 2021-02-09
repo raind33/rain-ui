@@ -29,11 +29,11 @@
   }
 </style>
 <script>
-  import RLayout from '../../../src/layout'
-  import RHeader from '../../../src/header'
-  import RFooter from '../../../src/footer'
-  import RContent from '../../../src/content'
-  import RSider from '../../../src/sider'
+  import RLayout from '../../../src/layout/layout'
+  import RHeader from '../../../src/layout/header'
+  import RFooter from '../../../src/layout/footer'
+  import RContent from '../../../src/layout/content'
+  import RSider from '../../../src/layout/sider'
 
   export default {
     components: {RLayout, RHeader, RFooter, RContent, RSider},

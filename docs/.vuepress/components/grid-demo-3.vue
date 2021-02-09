@@ -81,8 +81,8 @@
   }
 </style>
 <script>
-  import RRow from '../../../src/row'
-  import RCol from '../../../src/col'
+  import RRow from '../../../src/grid/row'
+  import RCol from '../../../src/grid/col'
 
   export default {
     components: {RRow, RCol},

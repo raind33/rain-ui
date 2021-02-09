@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import RInput from '../../../src/input'
+  import RInput from '../../../src/input/input'
 
   export default {
     components: {RInput},
