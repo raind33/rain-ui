@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   base: '/rain-ui/',
   themeConfig: {
@@ -29,6 +30,18 @@ module.exports = {
         collapsable: false,
       }
     ]
+  },
+  scss: {
+    prependData: `
+        @import "@styles/_var.scss";
+      `
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        "@styles": path.resolve(__dirname, "../../src/styles")
+      }
+    }
   },
   title: 'Rain UI',
   description: 'Just playing around'

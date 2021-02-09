@@ -1,25 +1,14 @@
 <template>
   <div>
-    <g-slides class="wrapper" width="300px" height="200px" :selected.sync="selected">
-      <g-slides-item name="1">
-        <div class="box">1</div>
-      </g-slides-item>
-      <g-slides-item name="2">
-        <div class="box">2</div>
-      </g-slides-item>
-      <g-slides-item name="3">
-        <div class="box">3</div>
-      </g-slides-item>
-    </g-slides>
+    <r-button>322</r-button>
   </div>
 </template>
 <script>
-import GSlides from './slides/slides'
-import GSlidesItem from './slides/slides-item'
+import RButton from './button/button'
 
 export default {
   name: 'demo',
-  components: { GSlides, GSlidesItem },
+  components: { RButton },
   data () {
     return {
       selected: '2'
