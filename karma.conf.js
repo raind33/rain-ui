@@ -7,7 +7,6 @@ module.exports = function (config) {
     files: [
       'tests/**/*.spec.js'
     ],
-
     preprocessors: {
       '**/*.spec.js': ['webpack', 'sourcemap']
     },
