@@ -5,7 +5,8 @@ node_js:
 services:
   - xvfb
 before_script:
-  - export DISPLAY=:99.0
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 addons:
   chrome: stable
 sudo: required

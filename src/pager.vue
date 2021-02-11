@@ -9,7 +9,7 @@
         <span :key="index" class="r-pager-item current">{{page}}</span>
       </template>
       <template v-else-if="page === '...'">
-        <r-icon :key="index" class="r-pager-separator" name="dots"></r-icon>
+        <r-icon :key="index" class="r-pager-separator" name="dot"></r-icon>
       </template>
       <template v-else>
         <span :key="index" class="r-pager-item other" @click="onClickPage(page)">{{page}}</span>
