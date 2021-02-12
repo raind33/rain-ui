@@ -1,83 +1,45 @@
 <template>
-  <div>
-    {{selected}}
-    <div style="margin: 20px;">
-      <r-table :columns="columns" :data-source="dataSource" bordered :selected-items.sync="selected" :order-by.sync="orderBy"
-        @update:orderBy="x" :loading="loading" :height="400" expend-field="description" checkable>
-        <template slot-scope="xxx">
-          <button @click="edit(xxx.item)">编辑</button>
-          <button @click="view(xxx.item)">查看</button>
-          <button>删除</button>
-        </template>
-      </r-table>
-    </div>
-    <div style="margin: 20px;">
-      <r-table :columns="columns" :data-source="dataSource" bordered compact :striped="false"></r-table>
-    </div>
-    <div style="margin: 20px;">
-      <r-pager :total-page="10" :current-page.sync="currentPage"></r-pager>
-    </div>
+  <div style="margin: 20px;">
+    {{error}}
+    <br>
+    {{fileList}}
+    <div>只能上传 300kb 以内的 png、jpeg 文件</div>
+    <r-uploader accept="image/*" method="POST" action="https://node-image-serve.herokuapp.com/upload" name="file"
+      @upload:fileList="y"
+      :parseResponse="parseResponse" :file-list.sync="fileList" @error="error=$event" :size-limit="1024*1024*1024">
+      <r-button icon="upload">上传</r-button>
+    </r-uploader>
   </div>
 </template>
+
 <script>
-import RPager from './pager'
-import RTable from './table/table'
+import RUploader from './uploader'
+import RButton from './button/button'
 
 export default {
   name: 'demo',
-  components: { RPager, RTable },
+  components: { RUploader, RButton },
   data () {
     return {
-      currentPage: 1,
-      selected: [],
-      columns: [
-        { text: '姓名', field: 'name', width: 100 }, // 1
-        { text: '分数', field: 'score' }
-      ],
-      orderBy: { // true - 开启排序，但是不确定asc desc
-        score: 'desc'
-      },
-      loading: false,
-      dataSource: [
-        { id: 1, name: '方方', score: 100, description: 'xxxx xxxx' },
-        { id: 2, name: '圆圆', score: 99, description: 'yyyy yyyy' },
-        { id: 3, name: '张三', score: 100 },
-        { id: 4, name: '李四', score: 99 },
-        { id: 5, name: '超人', score: 100 },
-        { id: 6, name: '蝙蝠侠', score: 99 },
-        { id: 7, name: '蜘蛛侠', score: 100 },
-        { id: 8, name: '钢铁侠', score: 99 },
-        { id: 9, name: '方方', score: 100 },
-        { id: 10, name: '圆圆', score: 99 },
-        { id: 11, name: '张三', score: 100 },
-        { id: 12, name: '李四', score: 99 },
-        { id: 13, name: '超人', score: 100 },
-        { id: 14, name: '蝙蝠侠', score: 99 },
-        { id: 15, name: '蜘蛛侠', score: 100 },
-        { id: 16, name: '钢铁侠', score: 99 },
-        { id: 17, name: '蜘蛛侠', score: 100 },
-        { id: 18, name: '钢铁侠', score: 99 },
-        { id: 19, name: '方方', score: 100 },
-        { id: 20, name: '圆圆', score: 99 }
-      ]
+      fileList: [],
+      error: ''
     }
   },
   methods: {
-    edit (item) {
-      alert(`开始编辑${item.id}`)
+    alert (error) {
+      window.alert(error || '上传失败')
     },
-    view (item) {
-      alert(`开始查看${item.id}`)
+    parseResponse (response) {
+      // const object = JSON.parse(response)
+      const url = `https://node-image-serve.herokuapp.com/preview/${response}`
+      return url
     },
-    x () {
-      this.loading = true
-      setTimeout(() => {
-        this.dataSource = this.dataSource.sort((a, b) => a.score - b.score)
-        this.loading = false
-      }, 3000)
+    y (newFileList) {
+      this.fileList = newFileList
     }
   }
 }
+
 </script>
 <style>
   * {margin: 0; padding: 0; box-sizing: border-box;}
