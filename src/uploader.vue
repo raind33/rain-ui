@@ -12,9 +12,9 @@
         <template v-else-if="file.type.indexOf('image') === 0">
           <img class="r-uploader-image" :src="file.url" width="32" height="32" alt="">
         </template>
-        <temaplte v-else>
+        <template v-else>
           <div class="r-uploader-defaultImage"></div>
-        </temaplte>
+        </template>
 
         <span class="r-uploader-name" :class="{[file.status]: file.status}">{{file.name}}</span>
         <button class="r-uploader-remove" @click="onRemoveFile(file)">x</button>
@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     onClickUpload () {
+      console.log('oooooooooooooooo')
       const input = this.createInput()
       input.addEventListener('change', (e) => {
         this.uploadFiles(input.files) // 单文件
