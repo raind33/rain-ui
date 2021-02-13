@@ -1,0 +1,12 @@
+.editorconfgi
+.browserslistrc
+.eslintrc.js
+.eslintignore
+.travis.yml
+deploy.sh
+jsconfig.json
+vetur.config.js
+karma.conf.js
+/src/
+/docs/
+/tests/
