@@ -21,7 +21,7 @@
         </tr>
         </thead>
         <tbody>
-        <template v-for="(item,index) in dataSource">
+        <template v-for="item,index in dataSource">
           <tr :key="item.id">
             <td v-if="expendField" :style="{width: '50px'}" class="r-table-center">
               <r-icon class="r-table-expendIcon" name="right"
@@ -151,6 +151,7 @@ export default {
       const { width } = div.getBoundingClientRect()
       const parent = div.parentNode
       const styles = getComputedStyle(parent)
+      const paddingLeft = styles.getPropertyValue('padding-left')
       const paddingRight = styles.getPropertyValue('padding-right')
       const borderLeft = styles.getPropertyValue('border-left-width')
       const borderRight = styles.getPropertyValue('border-right-width')
@@ -242,6 +243,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import "var";
   $grey: darken($grey, 10%);
   .r-table {
     width: 100%;

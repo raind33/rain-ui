@@ -33,7 +33,7 @@ describe('Button.vue', () => {
 
   it('icon 默认的 order 是 1', () => {
     const wrapper = mount(Button, {
-      attachTo: document.body,
+      attachToDocument: true,
       propsData: {
         icon: 'settings'
       }

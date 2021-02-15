@@ -3,13 +3,13 @@
   <div style="display: flex; justify-content: center;">
     <div style="width: 600px; border: 1px solid black;">
       <p>段落1</p>
-      <p>段落3222</p>
+      <p>段落2</p>
       <p>段落3</p>
-      <p>段落324</p>
+      <p>段落4</p>
       <p>段落5</p>
       <p>段落6</p>
       <p>段落7</p>
-      <p>段落8 3434353</p>
+      <p>段落8</p>
       <p>段落9</p>
       <g-sticky :distance="100">
         <div style="border: 1px solid red; ">

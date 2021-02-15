@@ -5,8 +5,10 @@ module.exports = function (config) {
     frameworks: ['mocha'],
 
     files: [
+      'tests/**/*.spec.js',
+      'dist/**/*.spec.css',
       'dist/**/*.css',
-      'tests/**/*.spec.js'
+      'dist/*.css'
     ],
     preprocessors: {
       '**/*.spec.js': ['webpack', 'sourcemap']

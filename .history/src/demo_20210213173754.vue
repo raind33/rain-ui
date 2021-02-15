@@ -9,7 +9,7 @@
       <p>段落5</p>
       <p>段落6</p>
       <p>段落7</p>
-      <p>段落8 3434353</p>
+      <p>段落8</p>
       <p>段落9</p>
       <g-sticky :distance="100">
         <div style="border: 1px solid red; ">

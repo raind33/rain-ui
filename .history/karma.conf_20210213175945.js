@@ -5,7 +5,6 @@ module.exports = function (config) {
     frameworks: ['mocha'],
 
     files: [
-      'dist/**/*.css',
       'tests/**/*.spec.js'
     ],
     preprocessors: {
@@ -17,7 +16,7 @@ module.exports = function (config) {
     },
     webpack: webpackConfig,
 
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec'],
 
     browsers: ['ChromeHeadless']
   })

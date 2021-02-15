@@ -40,7 +40,6 @@ describe('Button.vue', () => {
     })
     const vm = wrapper.vm
     const icon = vm.$el.querySelector('svg')
-    console.log(getComputedStyle(icon).order, 3434)
     expect(getComputedStyle(icon).order).to.eq('1')
   })
 

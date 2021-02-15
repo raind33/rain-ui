@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name rain-ui src/index.js",
     "test:unit:cli": "vue-cli-service test:unit",
-    "test:unit": "karma start",
+    "test:unit": "cross-env NODE_ENV=test karma start",
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",

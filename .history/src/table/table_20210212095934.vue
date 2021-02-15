@@ -12,9 +12,9 @@
             <div class="r-table-header">
               {{column.text}}
               <span v-if="column.field in orderBy" class="r-table-sorter" @click="changeOrderBy(column.field)">
-                <r-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
-                <r-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
-              </span>
+              <r-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
+              <r-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
+            </span>
             </div>
           </th>
           <th ref="actionsHeader" v-if="$scopedSlots.default"></th>
@@ -33,14 +33,7 @@
               /></td>
             <td :style="{width: '50px'}" v-if="numberVisible">{{index+1}}</td>
             <template v-for="column in columns">
-              <td :style="{width: column.width + 'px'}" :key="column.field">
-                <template v-if="column.render">
-                  <vnodes :vnodes="column.render({value: item[column.field]})"></vnodes>
-                </template>
-                <template v-else>
-                  {{item[column.field]}}
-                </template>
-              </td>
+              <td :style="{width: column.width + 'px'}" :key="column.field">{{item[column.field]}}</td>
             </template>
             <td v-if="$scopedSlots.default">
               <div ref="actions" style="display: inline-block;">
@@ -64,20 +57,13 @@
 </template>
 
 <script>
-import RIcon from './icon'
+import RIcon from '../icon'
 export default {
-  components: {
-    RIcon,
-    vnodes: {
-      functional: true,
-      render: (h, context) => context.props.vnodes
-    }
-  },
+  components: { RIcon },
   name: 'RTable',
   data () {
     return {
-      expendedIds: [],
-      columns: []
+      expendedIds: []
     }
   },
   props: {
@@ -107,6 +93,10 @@ export default {
       type: Boolean,
       default: false
     },
+    columns: {
+      type: Array,
+      required: true
+    },
     dataSource: {
       type: Array,
       required: true,
@@ -128,14 +118,6 @@ export default {
     }
   },
   mounted () {
-    this.columns = this.$slots.default.map(node => {
-      const { text, field, width } = node.componentOptions.propsData
-      const render = node.data.scopedSlots && node.data.scopedSlots.default
-      return { text, field, width, render }
-    })
-    const result = this.columns[0].render({ value: '方方' })
-    console.log(result)
-
     const table2 = this.$refs.table.cloneNode(false)
     this.table2 = table2
     table2.classList.add('r-table-copy')

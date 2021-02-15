@@ -1,17 +1,17 @@
 <template>
-  <div class="r-table-wrapper" ref="wrapper">
+  <div class="gulu-table-wrapper" ref="wrapper">
     <div :style="{height, overflow: 'auto'}" ref="tableWrapper">
-      <table class="r-table" :class="{bordered, compact, striped: striped}" ref="table">
+      <table class="gulu-table" :class="{bordered, compact, striped: striped}" ref="table">
         <thead>
         <tr>
-          <th v-if="expendField" :style="{width: '50px'}" class="r-table-center"></th>
-          <th v-if="checkable" :style="{width: '50px'}" class="r-table-center">
+          <th v-if="expendField" :style="{width: '50px'}" class="gulu-table-center"></th>
+          <th v-if="checkable" :style="{width: '50px'}" class="gulu-table-center">
             <input type="checkbox" @change="onChangeAllItems" ref="allChecked" :checked="areAllItemsSelected"/></th>
           <th :style="{width: '50px'}" v-if="numberVisible">#</th>
           <th :style="{width: column.width + 'px'}" v-for="column in columns" :key="column.field">
-            <div class="r-table-header">
+            <div class="gulu-table-header">
               {{column.text}}
-              <span v-if="column.field in orderBy" class="r-table-sorter" @click="changeOrderBy(column.field)">
+              <span v-if="column.field in orderBy" class="gulu-table-sorter" @click="changeOrderBy(column.field)">
                 <r-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
                 <r-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
               </span>
@@ -21,13 +21,13 @@
         </tr>
         </thead>
         <tbody>
-        <template v-for="(item,index) in dataSource">
+        <template v-for="item,index in dataSource">
           <tr :key="item.id">
-            <td v-if="expendField" :style="{width: '50px'}" class="r-table-center">
-              <r-icon class="r-table-expendIcon" name="right"
+            <td v-if="expendField" :style="{width: '50px'}" class="gulu-table-center">
+              <r-icon class="gulu-table-expendIcon" name="right"
                 @click="expendItem(item.id)"/>
             </td>
-            <td v-if="checkable" :style="{width: '50px'}" class="r-table-center">
+            <td v-if="checkable" :style="{width: '50px'}" class="gulu-table-center">
               <input type="checkbox" @change="onChangeItem(item, index, $event)"
                 :checked="inSelectedItems(item)"
               /></td>
@@ -57,23 +57,23 @@
         </tbody>
       </table>
     </div>
-    <div v-if="loading" class="r-table-loading">
+    <div v-if="loading" class="gulu-table-loading">
       <r-icon name="loading"/>
     </div>
   </div>
 </template>
 
 <script>
-import RIcon from './icon'
+import GIcon from './icon'
 export default {
   components: {
-    RIcon,
+    GIcon,
     vnodes: {
       functional: true,
       render: (h, context) => context.props.vnodes
     }
   },
-  name: 'RTable',
+  name: 'GuluTable',
   data () {
     return {
       expendedIds: [],
@@ -138,7 +138,7 @@ export default {
 
     const table2 = this.$refs.table.cloneNode(false)
     this.table2 = table2
-    table2.classList.add('r-table-copy')
+    table2.classList.add('gulu-table-copy')
     const tHead = this.$refs.table.children[0]
     const { height } = tHead.getBoundingClientRect()
     this.$refs.tableWrapper.style.marginTop = height + 'px'
@@ -151,6 +151,7 @@ export default {
       const { width } = div.getBoundingClientRect()
       const parent = div.parentNode
       const styles = getComputedStyle(parent)
+      const paddingLeft = styles.getPropertyValue('padding-left')
       const paddingRight = styles.getPropertyValue('padding-right')
       const borderLeft = styles.getPropertyValue('border-left-width')
       const borderRight = styles.getPropertyValue('border-right-width')
@@ -242,8 +243,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import "var";
   $grey: darken($grey, 10%);
-  .r-table {
+  .gulu-table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;

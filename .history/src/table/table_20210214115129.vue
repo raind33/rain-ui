@@ -21,7 +21,7 @@
         </tr>
         </thead>
         <tbody>
-        <template v-for="(item,index) in dataSource">
+        <template v-for="item,index in dataSource">
           <tr :key="item.id">
             <td v-if="expendField" :style="{width: '50px'}" class="r-table-center">
               <r-icon class="r-table-expendIcon" name="right"
