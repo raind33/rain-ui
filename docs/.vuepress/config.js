@@ -1,7 +1,12 @@
 const path = require('path')
 module.exports = {
+  head: [
+      ['script', {src: 'https://cdn.bootcdn.net/ajax/libs/three.js/r122/three.min.js'}],
+      ['script', {src: 'https://at.alicdn.com/t/font_2321457_ylgwhfga3r8.js'}]
+  ],
   base: '/rain-ui/',
   themeConfig: {
+
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/get-started/' },

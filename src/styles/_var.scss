@@ -1,12 +1,13 @@
-$border-color-hover: #666;
-$border-color: #999;
+$border-color-hover: #409eff;
+$--color-primary: #409eff;
+$border-color: rgba(0,0,0,.15);
 $border-color-light: lighten($border-color, 30%);
 $border-radius: 4px;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
 $button-active-bg: #eee;
 $button-bg: white;
 $button-height: 32px;
-$color: #333;
+$color: #606266;
 $light-color: #666;
 $font-size: 14px;
 $small-font-size: 12px;
