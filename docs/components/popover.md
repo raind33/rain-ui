@@ -1,8 +1,8 @@
 ---
-title: Popover
+title: Popover 弹出框
 ---
 
-# 弹出层
+# 弹出框
 
 <ClientOnly>
   <popover-demo-1>

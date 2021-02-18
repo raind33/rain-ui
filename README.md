@@ -2,7 +2,7 @@
 ![build status](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## 介绍
-
+> 本组件库仅供学习交流，请勿在生产环境中使用
 vue ui 框架
 ## 开始使用
 
@@ -28,3 +28,5 @@ export default {
 ## 变更记录
 
 ## 联系方式
+
+![](https://cdn.nlark.com/yuque/0/2021/png/1491147/1613621793932-bad7eeb3-3ce0-46e6-862d-48227affb4b4.png)
