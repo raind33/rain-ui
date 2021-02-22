@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import RIcon from './icon'
+import RIcon from '../icon'
 export default {
   components: {
     RIcon,
@@ -133,8 +133,6 @@ export default {
       const render = node.data.scopedSlots && node.data.scopedSlots.default
       return { text, field, width, render }
     })
-    const result = this.columns[0].render({ value: '方方' })
-    console.log(result)
 
     const table2 = this.$refs.table.cloneNode(false)
     this.table2 = table2
