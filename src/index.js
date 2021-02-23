@@ -1,34 +1,85 @@
-export { default as Button } from './button/button'
-export { default as ButtonGroup } from './button/button-group'
-export { default as Cascader } from './cascader/cascader'
-export { default as CascaderItems } from './cascader/cascader-items'
-export { default as CollapseItem } from './collapse/collapse-item'
-export { default as Collapse } from './collapse/collapse'
-export { default as Col } from './grid/col'
-export { default as Row } from './grid/row'
-export { default as Content } from './layout/content'
-export { default as Footer } from './layout/footer'
-export { default as Header } from './layout/header'
-export { default as Layout } from './layout/layout'
-export { default as Sider } from './layout/sider'
-export { default as Nav } from './nav/nav'
-export { default as NavItem } from './nav/nav-item'
-export { default as SubNav } from './nav/sub-nav'
-export { default as SlidesItem } from './slides/slides-item'
-export { default as Slides } from './slides/slides'
-export { default as Tabs } from './tabs/tabs'
-export { default as TabsBody } from './tabs/tabs-body'
-export { default as TabsHead } from './tabs/tabs-header'
-export { default as TabsItem } from './tabs/tabs-item'
-export { default as TabsPane } from './tabs/tabs-pane'
-export { default as ClickOutside } from './click-outside'
-export { default as Icon } from './icon'
-export { default as Input } from './input/input'
-export { default as Pager } from './pager'
-export { default as Plugin } from './plugin'
-export { default as Popover } from './popover/popover'
-export { default as Sticky } from './sticky'
-export { default as Table } from './table/table'
-export { default as Toast } from './toast'
-export { default as Uploader } from './uploader'
-export { default as Validate } from './validate'
+import Button from '../packages/button'
+import ButtonGroup from '../packages/button-group'
+import Cascader from '../packages/cascader'
+import CascaderItems from '../packages/cascader-items'
+import CollapseItem from '../packages/collapse-item'
+import Collapse from '../packages/collapse'
+import Col from '../packages/col'
+import Row from '../packages/row'
+import Content from '../packages/content'
+import Footer from '../packages/footer'
+import Header from '../packages/header'
+import Layout from '../packages/layout'
+import Sider from '../packages/sider'
+import Nav from '../packages/nav'
+import NavItem from '../packages/nav-item'
+import SubNav from '../packages/sub-nav'
+import SlidesItem from '../packages/slides-item'
+import Slides from '../packages/slides'
+import Tabs from '../packages/tabs'
+import TabsBody from '../packages/tabs-body'
+import TabsHead from '../packages/tabs-header'
+import TabsItem from '../packages/tabs-item'
+import TabsPane from '../packages/tabs-pane'
+import ClickOutside from '../packages/click-outside'
+import Icon from '../packages/icon'
+import Input from '../packages/input'
+import Pager from '../packages/pager'
+import Plugin from '../packages/plugin'
+import Popover from '../packages/popover'
+import Sticky from '../packages/sticky'
+import Table from '../packages/table'
+import Toast from '../packages/toast'
+import Uploader from '../packages/uploader'
+import Validate from '../packages/validate'
+
+const components = [
+  Button,
+  ButtonGroup,
+  Cascader,
+  CascaderItems,
+  CollapseItem,
+  Collapse,
+  Col,
+  Row,
+  Content,
+  Footer,
+  Header,
+  Layout,
+  Sider,
+  Nav,
+  NavItem,
+  SubNav,
+  SlidesItem,
+  Slides,
+  Tabs,
+  TabsBody,
+  TabsHead,
+  TabsItem,
+  TabsPane,
+  ClickOutside,
+  Icon,
+  Input,
+  Pager,
+  Plugin,
+  Popover,
+  Sticky,
+  Table,
+  Toast,
+  Uploader,
+  Validate
+]
+const install = (Vue) => {
+  if (install.installed) return
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+export default {
+  ...components
+}
