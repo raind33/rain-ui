@@ -29,8 +29,8 @@
 
 </style>
 <script>
-  import plugin from '../../../src/plugin'
-  import RButton from '../../../src/button/button'
+  import plugin from '../../../packages/plugin'
+  import RButton from '../../../packages/button/'
   import Vue from 'vue'
 
   Vue.use(plugin)

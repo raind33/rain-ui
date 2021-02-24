@@ -20,8 +20,9 @@
   </button>
 </template>
 <script>
-import Icon from '../icon.vue'
+import Icon from '../../icon'
 export default {
+  name: 'RButton',
   components: {
     'r-icon': Icon
   },
@@ -43,6 +44,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../../styles/_var.scss';
 .r-button {
   font-size: $font-size;
   height: $button-height;

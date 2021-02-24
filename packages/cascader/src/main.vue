@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import CascaderItems from './cascader-items'
-import ClickOutside from '../click-outside'
+import CascaderItems from '../../cascader-items'
+import ClickOutside from '../../click-outside.js'
 export default {
   name: 'RCascader',
   components: { CascaderItems },
@@ -110,6 +110,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import '../../styles/_var.scss';
   .cascader {
     display: inline-block;
     position: relative;

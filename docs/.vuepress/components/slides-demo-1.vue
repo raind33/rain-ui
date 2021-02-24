@@ -23,8 +23,8 @@
   </div>
 </template>
 <script>
-  import RSlides from '../../../src/slides/slides'
-  import RSlidesItem from '../../../src/slides/slides-item'
+  import RSlides from '../../../packages/slides/'
+  import RSlidesItem from '../../../packages/slides-item/'
 
   export default {
     components: {

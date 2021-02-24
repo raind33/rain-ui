@@ -2,8 +2,8 @@ import chai, {expect} from 'chai'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 import {mount} from '@vue/test-utils'
-import Slides from '@/slides/slides.vue'
-import SlidesItem from '@/slides/slides-item.vue'
+import Slides from '@packages/slides'
+import SlidesItem from '@packages/slides-item'
 import Vue from 'vue'
 
 chai.use(sinonChai)

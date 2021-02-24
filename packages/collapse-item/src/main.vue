@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   $grey: #ddd;
   $border-radius: 4px;
   .collapseItem {

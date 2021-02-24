@@ -33,11 +33,11 @@
   }
 </style>
 <script>
-  import RLayout from '../../../src/layout/layout'
-  import RHeader from '../../../src/layout/header'
-  import RFooter from '../../../src/layout/footer'
-  import RContent from '../../../src/layout/content'
-  import RSider from '../../../src/layout/sider'
+  import RLayout from '../../../packages/layout/'
+  import RHeader from '../../../packages/layout/'
+  import RFooter from '../../../packages/layout/'
+  import RContent from '../../../packages/layout/'
+  import RSider from '../../../packages/layout/'
 
   export default {
     components: {RLayout, RHeader, RFooter, RContent, RSider},

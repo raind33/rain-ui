@@ -44,7 +44,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        "@styles": path.resolve(__dirname, "../../src/styles")
+        "@styles": path.resolve(__dirname, "../../packages/styles")
       }
     }
   },

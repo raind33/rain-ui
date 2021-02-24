@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import ClickOutside from '../click-outside'
-import RIcon from '../icon'
+import ClickOutside from '../../click-outside'
+import RIcon from '../../icon'
 export default {
   components: { RIcon },
   directives: { ClickOutside },
@@ -90,6 +90,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   .r-sub-nav {
     position: relative;
     &:not(.vertical) {

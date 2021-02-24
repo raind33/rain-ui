@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import RIcon from '../icon'
+import RIcon from '../../icon'
 export default {
   components: {
     RIcon,
@@ -240,6 +240,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   $grey: darken($grey, 10%);
   .r-table {
     width: 100%;

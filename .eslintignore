@@ -1,3 +1,4 @@
-/src/svg.js
-/src/db.js
+/packages/svg.js
+/packages/db.js
 /tests/
+/lib/

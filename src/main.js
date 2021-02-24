@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import demo from './demo.vue'
 // import router from './router'
-import plugin from './plugin'
+import plugin from '../packages/plugin'
 
 Vue.use(plugin)
 Vue.config.productionTip = false

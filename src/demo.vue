@@ -106,7 +106,7 @@
 </template>
 
 <script>
-import RScroll from './scroll'
+import RScroll from '../packages/scroll'
 export default {
   name: 'demo',
   components: {

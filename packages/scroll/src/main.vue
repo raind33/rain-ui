@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { css } from '@/utils'
+import { css } from '../../utils'
 export default {
   name: 'RScroll',
   data () {

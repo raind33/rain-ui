@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import Icon from '../icon'
+import Icon from '../../icon'
 
 export default {
   components: { Icon },
@@ -37,6 +37,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../../styles/_var.scss';
+
   .wrapper { font-size: $font-size; display: inline-flex;
     align-items: center;
     > :not(:last-child) {margin-right: .5em; }

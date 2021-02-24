@@ -26,10 +26,10 @@ const isEs = (fmt) => fmt === esDir
 function createPlugins ({ min } = {}) {
   const exclude = 'node_modules/**'
   const plugins = [
-    commonjs(),
     vue({
       css: false
     }),
+    commonjs(),
     json(),
     filesize(),
     resolve({
@@ -51,7 +51,7 @@ function createPlugins ({ min } = {}) {
       plugins: [simplevars(), nested(), cssnext({ warnForDuplicates: false }), cssnano()],
       use: [
         [
-          'less',
+          'sass',
           {
             javascriptEnabled: true
           }
@@ -59,11 +59,12 @@ function createPlugins ({ min } = {}) {
       ],
       inject: false,
       // sourceMap: true,
-      extensions: ['.css', '.less'],
+      extensions: ['.css', '.scss'],
       extract: true // 输出路径
     }),
     replace({
       exclude,
+      preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify(env)
     }),
     alias({
@@ -112,7 +113,7 @@ async function buildEntry (config) {
     file,
     format,
     name: moduleName,
-    // exports: 'named',
+    exports: 'default',
     globals: externalMap
     // entryFileNames: file
   }
@@ -126,8 +127,8 @@ async function buildEntry (config) {
  * @param {*} param0
  */
 async function write ({ output, file, fileName, format, fullName } = {}) {
-  for (const { isAsset, code, source } of output) {
-    if (isAsset) {
+  for (const { type, code, source } of output) {
+    if (type === 'asset') {
       const cssFileName = `${fileName}.css`
       const filePath = isEs(format)
         ? getAssetsPath(`/${es}/${cssFileName}`)

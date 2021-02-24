@@ -10,8 +10,9 @@ module.exports = {
         .use('null-loader')
         .loader('null-loader')
     }
+    config.resolve.alias
+      .set('@packages', path.resolve(__dirname, './packages'))
   },
-
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',

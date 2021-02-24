@@ -22,11 +22,11 @@
   </div>
 </template>
 <script>
-  import RTabs from '../../../src/tabs/tabs'
-  import RTabsBody from '../../../src/tabs/tabs-body'
-  import RTabsHead from '../../../src/tabs/tabs-header'
-  import RTabsItem from '../../../src/tabs/tabs-item'
-  import RTabsPane from '../../../src/tabs/tabs-pane'
+  import RTabs from '../../../packages/tabs'
+  import RTabsBody from '../../../packages/tabs-body'
+  import RTabsHead from '../../../packages/tabs-header'
+  import RTabsItem from '../../../packages/tabs-item'
+  import RTabsPane from '../../../packages/tabs-pane/'
 
   export default {
     components: {RTabs, RTabsBody, RTabsHead, RTabsItem, RTabsPane},

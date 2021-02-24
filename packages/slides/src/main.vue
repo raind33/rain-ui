@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import RIcon from '../icon'
+import RIcon from '../../icon'
 export default {
   components: { RIcon },
   props: {

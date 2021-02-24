@@ -34,6 +34,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   .r-nav-item {
     padding: 10px 20px;
     position: relative;

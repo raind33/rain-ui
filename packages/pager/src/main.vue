@@ -22,6 +22,8 @@
   </div>
 </template>
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   .r-pager { display: flex; justify-content: flex-start; align-items: center; user-select: none;
     $width: 20px; $height: 20px; $font-size: 12px;
     &.hide { display: none; }
@@ -49,7 +51,7 @@
 </style>
 
 <script>
-import RIcon from './icon'
+import RIcon from '../../icon'
 export default {
   name: 'RPager',
   components: { RIcon },

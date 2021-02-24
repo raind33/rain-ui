@@ -27,6 +27,8 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   $tab-height: 40px;
   $blue: blue;
   $border-color: #ddd;

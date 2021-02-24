@@ -133,6 +133,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   $border-color: #333;
   $border-radius: 4px;
   .popover {

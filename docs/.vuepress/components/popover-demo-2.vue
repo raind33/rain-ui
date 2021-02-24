@@ -41,8 +41,8 @@
 <style scoped>
 </style>
 <script>
-  import RButton from '../../../src/button/button'
-  import RPopover from '../../../src/popover/popover'
+  import RButton from '../../../packages/button/'
+  import RPopover from '../../../packages/popover/'
 
 
   export default {

@@ -84,6 +84,8 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   $font-size: 14px;
   $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, 0.75);

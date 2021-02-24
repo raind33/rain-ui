@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai'
 import { mount } from '@vue/test-utils'
-import Popover from '@/popover/popover'
+import Popover from '@packages/popover'
 
 
 describe('Popover', () => {

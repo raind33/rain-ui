@@ -5,7 +5,8 @@
       "allowSyntheticDefaultImports": true,
       "baseUrl": "./",
       "paths": {
-        "@/*": ["src/*"]
+        "@/*": ["src/*"],
+        "@packages/*": ["packages/*"],
       }
   },
   "exclude": [

@@ -60,6 +60,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   .r-nav {
     display: flex;
     border-bottom: 1px solid $grey;

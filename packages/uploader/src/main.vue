@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import RIcon from './icon'
-import http from './http'
+import RIcon from '../../icon'
+import http from '../../http'
 
 export default {
   name: 'RUploader',
@@ -155,6 +155,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   .r-uploader {
     &-fileList {
       list-style: none;

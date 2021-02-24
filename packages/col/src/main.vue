@@ -64,6 +64,8 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+@import '../../styles/_var.scss';
+
   .col {
     $class-prefix: col-;
     @for $n from 1 through 24 {
@@ -91,7 +93,7 @@ export default {
         }
       }
     }
-    @media (min-width: 769px){ // 770
+    @media (min-width: 769px){
       $class-prefix: col-narrow-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
