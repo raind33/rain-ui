@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "UI 组件库",
   "author": "rain",
-  "main": "dist/rain-ui.umd.min.js",
+  "main": "lib/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name rain-ui src/index.js",

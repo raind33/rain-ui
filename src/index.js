@@ -21,17 +21,14 @@ import TabsBody from '../packages/tabs-body'
 import TabsHead from '../packages/tabs-header'
 import TabsItem from '../packages/tabs-item'
 import TabsPane from '../packages/tabs-pane'
-import ClickOutside from '../packages/click-outside'
 import Icon from '../packages/icon'
 import Input from '../packages/input'
 import Pager from '../packages/pager'
-import Plugin from '../packages/plugin'
 import Popover from '../packages/popover'
 import Sticky from '../packages/sticky'
 import Table from '../packages/table'
 import Toast from '../packages/toast'
 import Uploader from '../packages/uploader'
-import Validate from '../packages/validate'
 
 const components = [
   Button,
@@ -41,7 +38,7 @@ const components = [
   CollapseItem,
   Collapse,
   // Col,
-  Row,
+  // Row,
   Content,
   Footer,
   Header,
@@ -57,17 +54,14 @@ const components = [
   TabsHead,
   TabsItem,
   TabsPane,
-  ClickOutside,
   Icon,
   Input,
   Pager,
-  Plugin,
   Popover,
   Sticky,
   Table,
   Toast,
-  Uploader,
-  Validate
+  Uploader
 ]
 const install = (Vue) => {
   if (install.installed) return
@@ -81,5 +75,36 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  ...components
+  install,
+  Button,
+  ButtonGroup,
+  Cascader,
+  CascaderItems,
+  CollapseItem,
+  Collapse,
+  // Col,
+  // Row,
+  Content,
+  Footer,
+  Header,
+  Layout,
+  Sider,
+  Nav,
+  NavItem,
+  SubNav,
+  SlidesItem,
+  Slides,
+  Tabs,
+  TabsBody,
+  TabsHead,
+  TabsItem,
+  TabsPane,
+  Icon,
+  Input,
+  Pager,
+  Popover,
+  Sticky,
+  Table,
+  Toast,
+  Uploader
 }

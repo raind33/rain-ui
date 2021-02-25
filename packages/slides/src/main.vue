@@ -28,6 +28,7 @@
 <script>
 import RIcon from '../../icon'
 export default {
+  name: 'RSlides',
   components: { RIcon },
   props: {
     selected: {
