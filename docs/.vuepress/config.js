@@ -3,7 +3,7 @@ module.exports = {
   head: [
       ['script', {src: 'https://cdn.bootcdn.net/ajax/libs/three.js/r122/three.min.js'}],
       ['script', {src: 'https://at.alicdn.com/t/font_2321457_ylgwhfga3r8.js'}],
-      ['link', { rel: 'icon', href: '/qq.png' }]
+      ['link', { rel: 'icon', href: '/qq.jpg' }]
   ],
   base: '/rain-ui/',
   themeConfig: {
