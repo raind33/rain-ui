@@ -27,16 +27,16 @@
 
 </style>
 <script>
-  import plugin from '../../../packages/plugin'
+  import Toast from '../../../packages/toast'
   import RButton from '../../../packages/button/'
   import Vue from 'vue'
 
-  Vue.use(plugin)
 
   export default {
     components: {RButton},
     data () {
       return {
+        toast: Toast,
         content: `
           <style>
             .r-wrapper {
@@ -50,7 +50,7 @@
 
           methods: {
             onClickButton () {
-              this.$toast('你知道我在等你吗？', {
+              this.toast('你知道我在等你吗？', {
                 closeButton: {
                   text: '知道了',
                   callback: () => {
@@ -65,7 +65,7 @@
     },
     methods: {
       onClickButton () {
-        this.$toast('<strong style="color:red;">加粗的提示</strong>', {
+        this.toast('<strong style="color:red;">加粗的提示</strong>', {
           enableHtml: true
         })
       }
