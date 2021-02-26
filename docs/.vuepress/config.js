@@ -2,7 +2,8 @@ const path = require('path')
 module.exports = {
   head: [
       ['script', {src: 'https://cdn.bootcdn.net/ajax/libs/three.js/r122/three.min.js'}],
-      ['script', {src: 'https://at.alicdn.com/t/font_2321457_ylgwhfga3r8.js'}]
+      ['script', {src: 'https://at.alicdn.com/t/font_2321457_ylgwhfga3r8.js'}],
+      ['link', { rel: 'icon', href: '/qq.png' }]
   ],
   base: '/rain-ui/',
   themeConfig: {

@@ -1,6 +1,6 @@
 <template>
   <div style="padding-top: 16px;">
-    <h2>设置关闭按钮</h2>
+    <h3>设置关闭按钮</h3>
     <p>
       <strong>预览</strong>
     </p>
