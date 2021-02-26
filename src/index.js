@@ -4,7 +4,7 @@ import Cascader from '../packages/cascader'
 import CascaderItems from '../packages/cascader-items'
 import CollapseItem from '../packages/collapse-item'
 import Collapse from '../packages/collapse'
-// import Col from '../packages/col'
+import Col from '../packages/col'
 import Row from '../packages/row'
 import Content from '../packages/content'
 import Footer from '../packages/footer'
@@ -37,8 +37,8 @@ const components = [
   CascaderItems,
   CollapseItem,
   Collapse,
-  // Col,
-  // Row,
+  Col,
+  Row,
   Content,
   Footer,
   Header,
@@ -82,8 +82,8 @@ export default {
   CascaderItems,
   CollapseItem,
   Collapse,
-  // Col,
-  // Row,
+  Col,
+  Row,
   Content,
   Footer,
   Header,
