@@ -60,7 +60,6 @@ const components = [
   Popover,
   Sticky,
   Table,
-  Toast,
   Uploader
 ]
 const install = (Vue) => {
@@ -68,6 +67,8 @@ const install = (Vue) => {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
+
+  Vue.prototype.$toast = Toast
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

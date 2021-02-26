@@ -107,10 +107,14 @@
 
 <script>
 import RScroll from '../packages/scroll'
+import Toast from '../packages/toast'
 export default {
   name: 'demo',
   components: {
     RScroll
+  },
+  mounted () {
+    Toast('哈哈哈')
   }
 }
 </script>
