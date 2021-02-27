@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-row class="demoRow">
       <r-col span="8">
         <div class="demoCol">8</div>

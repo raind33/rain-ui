@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-input v-model="value"></r-input>
     <div>
       value: {{value}}

@@ -30,7 +30,7 @@ export default {
 @import '../../styles/_var.scss';
 
   $tab-height: 40px;
-  $blue: blue;
+  $blue: $--color-primary;
   $border-color: #ddd;
   .tabs-head {
     display: flex;

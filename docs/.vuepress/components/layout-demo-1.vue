@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-layout style="color: white;">
       <r-header style="height: 50px; background:lightskyblue;">
         header

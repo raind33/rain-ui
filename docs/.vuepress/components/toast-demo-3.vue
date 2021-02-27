@@ -1,18 +1,8 @@
 <template>
-  <div style="padding-top: 16px;">
-    <h3>支持 HTML</h3>
-    <p>
-      <strong>预览</strong>
-    </p>
-
+  <div >
     <div>
       <r-button @click="onClickButton">上方弹出</r-button>
     </div>
-
-    <p>
-      <strong>代码</strong>
-    </p>
-    <pre><code>{{content}}</code></pre>
   </div>
 </template>
 <style>
@@ -36,31 +26,7 @@
     components: {RButton},
     data () {
       return {
-        toast: Toast,
-        content: `
-          <style>
-            .r-wrapper {
-              z-index: 30;
-            }
-          </style>
-
-          <div>
-            <r-button @click="onClickButton">上方弹出</r-button>
-          </div>
-
-          methods: {
-            onClickButton () {
-              this.toast('你知道我在等你吗？', {
-                closeButton: {
-                  text: '知道了',
-                  callback: () => {
-                    console.log('他说知道了')
-                  }
-                }
-              })
-            }
-          },
-      `.replace(/^ {8}/gm, '').trim()
+        toast: Toast
       }
     },
     methods: {

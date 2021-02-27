@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-layout style="color: white; overflow:hidden;">
       <r-aside style=" background:#4fa6ffc4; width:200px; color: white;">
         aside

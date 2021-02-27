@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-input value="中文"></r-input>
     <r-input value="中文" disabled></r-input>
     <r-input value="中文" readonly></r-input>

@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-tabs :selected="selected">
       <r-tabs-head>
         <r-tabs-item name="1">1</r-tabs-item>

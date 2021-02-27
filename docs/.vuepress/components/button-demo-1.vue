@@ -1,5 +1,5 @@
 <template>
-  <div style="padding-top: 16px;">
+  <div >
     <r-button>默认按钮</r-button>
     <r-button icon="settings">默认按钮</r-button>
     <r-button :loading="true">默认按钮</r-button>
