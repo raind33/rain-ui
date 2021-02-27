@@ -9,14 +9,14 @@ export default {
   data () {
     return {
       layoutClass: {
-        hasSider: false
+        'is-vertical': true
       }
     }
   },
   mounted () {
     this.$children.forEach((vm) => {
-      if (vm.$options.name === 'RSider') {
-        this.layoutClass.hasSider = true
+      if (vm.$options.name === 'RAside') {
+        this.layoutClass['is-vertical'] = false
       }
     })
   }
@@ -27,10 +27,9 @@ export default {
   .layout {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-    &.hasSider {
-      flex-direction: row;
+    flex-direction: row;
+    &.is-vertical {
+      flex-direction: column;
     }
   }
 </style>

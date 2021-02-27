@@ -5,7 +5,7 @@ title: 快速上手
 # 快速上手
 
 ## 安装
-```
+```bash
 npm i -S raind-ui
 ```
 
@@ -13,7 +13,7 @@ npm i -S raind-ui
 
 ### 全量引入
 
-```
+```javascript
 import raindUi from 'raind-ui'
 import 'raind-ui/lib/theme/index.css'
 Vue.use(raindUi)

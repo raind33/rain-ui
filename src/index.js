@@ -10,7 +10,7 @@ import Content from '../packages/content'
 import Footer from '../packages/footer'
 import Header from '../packages/header'
 import Layout from '../packages/layout'
-import Sider from '../packages/sider'
+import Aside from '../packages/aside'
 import Nav from '../packages/nav'
 import NavItem from '../packages/nav-item'
 import SubNav from '../packages/sub-nav'
@@ -43,7 +43,7 @@ const components = [
   Footer,
   Header,
   Layout,
-  Sider,
+  Aside,
   Nav,
   NavItem,
   SubNav,
@@ -89,7 +89,7 @@ export default {
   Footer,
   Header,
   Layout,
-  Sider,
+  Aside,
   Nav,
   NavItem,
   SubNav,

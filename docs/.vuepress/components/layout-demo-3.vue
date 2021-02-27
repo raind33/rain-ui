@@ -1,14 +1,9 @@
 <template>
   <div style="padding-top: 16px;">
-    <h2>布局</h2>
-    <p>
-      <strong>预览</strong>
-    </p>
-
-    <r-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-      <r-sider style=" background:#ddd; width:200px; color: black;">
-        sider
-      </r-sider>
+    <r-layout style="color: white; overflow:hidden;">
+      <r-aside style=" background:#4fa6ffc4; width:200px; color: white;">
+        aside
+      </r-aside>
       <r-layout>
         <r-header style="height: 50px; background:lightskyblue;">
           header
@@ -21,10 +16,6 @@
         </r-footer>
       </r-layout>
     </r-layout>
-    <p>
-      <strong>代码</strong>
-    </p>
-    <pre><code>{{content}}</code></pre>
   </div>
 </template>
 <style scoped>
@@ -34,35 +25,12 @@
 </style>
 <script>
   import RLayout from '../../../packages/layout/'
-  import RHeader from '../../../packages/layout/'
-  import RFooter from '../../../packages/layout/'
-  import RContent from '../../../packages/layout/'
-  import RSider from '../../../packages/layout/'
+  import RHeader from '../../../packages/header/'
+  import RFooter from '../../../packages/footer/'
+  import RContent from '../../../packages/content/'
+  import RAside from '../../../packages/aside/'
 
   export default {
-    components: {RLayout, RHeader, RFooter, RContent, RSider},
-    data () {
-      return {
-        content: `
-          <r-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-            <r-sider style=" background:#ddd; width:200px; color: black;">
-              sider
-            </r-sider>
-            <r-layout>
-              <r-header style="height: 50px; background:lightskyblue;">
-                header
-              </r-header>
-              <r-content style="height: 100px; background:deepskyblue;">
-                content
-              </r-content>
-              <r-footer style="height: 50px; background:lightskyblue;">
-                footer
-              </r-footer>
-            </r-layout>
-          </r-layout>
-
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    }
+    components: {RLayout, RHeader, RFooter, RContent, RAside}
   }
 </script>

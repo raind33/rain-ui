@@ -79,9 +79,9 @@ module.exports = {
     input: 'packages/scroll/index.js',
     output: 'scroll'
   },
-  sider: {
-    input: 'packages/sider/index.js',
-    output: 'sider'
+  aside: {
+    input: 'packages/aside/index.js',
+    output: 'aside'
   },
   slides: {
     input: 'packages/slides/index.js',
