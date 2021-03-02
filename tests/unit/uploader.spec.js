@@ -2,7 +2,7 @@ import chai, {expect} from 'chai'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 import {mount} from '@vue/test-utils'
-import Uploader from '@packages/uploader'
+import Uploader from '@packages/upload'
 import http from '@packages/http'
 
 

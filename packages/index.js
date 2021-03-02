@@ -30,7 +30,7 @@ export { default as Popover } from './popover/popover'
 export { default as Sticky } from './sticky'
 export { default as Table } from './table/table'
 export { default as Toast } from './toast'
-export { default as Uploader } from './uploader'
+export { default as Uploader } from './upload'
 export { default as Validate } from './validate'
 
 const components = [

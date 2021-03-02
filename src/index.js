@@ -28,7 +28,7 @@ import Popover from '../packages/popover'
 import Sticky from '../packages/sticky'
 import Table from '../packages/table'
 import Toast from '../packages/toast'
-import Uploader from '../packages/uploader'
+import Upload from '../packages/upload'
 
 const components = [
   Button,
@@ -60,7 +60,7 @@ const components = [
   Popover,
   Sticky,
   Table,
-  Uploader
+  Upload
 ]
 const install = (Vue) => {
   if (install.installed) return
@@ -107,5 +107,5 @@ export default {
   Sticky,
   Table,
   Toast,
-  Uploader
+  Upload
 }
