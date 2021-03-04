@@ -33,6 +33,7 @@ module.exports = {
           '/components/popover',
           '/components/slides',
           '/components/upload',
+          '/components/cascader',
         ],
         collapsable: false,
       }
