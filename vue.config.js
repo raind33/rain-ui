@@ -1,5 +1,5 @@
 const path = require('path')
-
+console.log('测试下')
 module.exports = {
   chainWebpack: (config) => {
     if (process.env.NODE_ENV === 'test') {
